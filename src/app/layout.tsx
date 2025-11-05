@@ -30,7 +30,7 @@ export default function RootLayout({
           <ThemeProvider>
             <div className="flex flex-col min-h-screen">
               <NavBar />
-              <main className="grow container">{children}</main>
+              <main className="pt-16 grow container">{children}</main>
               <Footer />
             </div>
           </ThemeProvider>

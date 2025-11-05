@@ -1,30 +1,87 @@
 import type { Config } from "tailwindcss";
-import typography from "@tailwindcss/typography";
-import forms from "@tailwindcss/forms";
 
 const config: Config = {
+  // IMPORTANT: This enables class-based dark mode
   darkMode: "class",
+
+  // CRITICAL: Make sure these paths match your project structure
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     extend: {
       colors: {
+        // Define your primary color palette
+        // Option 1: Blue theme (default)
+        // primary: {
+        //   50: "#eff6ff",
+        //   100: "#dbeafe",
+        //   200: "#bfdbfe",
+        //   300: "#93c5fd",
+        //   400: "#60a5fa",
+        //   500: "#3b82f6",
+        //   600: "#2563eb", // Main primary color
+        //   700: "#1d4ed8",
+        //   800: "#1e40af",
+        //   900: "#1e3a8a",
+        // },
+
+        // Option 2: Purple theme (uncomment to use)
         primary: {
-          50: "#eff6ff",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          900: "#1e3a8a",
+          50: "#faf5ff",
+          100: "#f3e8ff",
+          200: "#e9d5ff",
+          300: "#d8b4fe",
+          400: "#c084fc",
+          500: "#a855f7",
+          600: "#9333ea", // Main primary color
+          700: "#7e22ce",
+          800: "#6b21a8",
+          900: "#581c87",
         },
+
+        // Option 3: Green theme (uncomment to use)
+        // primary: {
+        //   50: '#f0fdf4',
+        //   100: '#dcfce7',
+        //   200: '#bbf7d0',
+        //   300: '#86efac',
+        //   400: '#4ade80',
+        //   500: '#22c55e',
+        //   600: '#16a34a',  // Main primary color
+        //   700: '#15803d',
+        //   800: '#166534',
+        //   900: '#14532d',
+        // },
+
+        // Option 4: Custom brand colors
+        // primary: {
+        //   50: '#fef2f2',
+        //   100: '#fee2e2',
+        //   200: '#fecaca',
+        //   300: '#fca5a5',
+        //   400: '#f87171',
+        //   500: '#ef4444',
+        //   600: '#dc2626',  // Main primary color
+        //   700: '#b91c1c',
+        //   800: '#991b1b',
+        //   900: '#7f1d1d',
+        // },
       },
+
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in out",
+        "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
+        "slide-down": "slideDown 0.5s ease-out",
+        "slide-in-right": "slideInRight 0.5s ease-out",
+        "slide-in-left": "slideInLeft 0.5s ease-out",
+        "bounce-slow": "bounce 2s infinite",
       },
-      keyframs: {
+
+      keyframes: {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
@@ -33,9 +90,27 @@ const config: Config = {
           "0%": { transform: "translateY(20px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        slideDown: {
+          "0%": { transform: "translateY(-20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideInRight: {
+          "0%": { transform: "translateX(20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        slideInLeft: {
+          "0%": { transform: "translateX(-20px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
       },
     },
   },
-  plugins: [typography, forms],
+
+  plugins: [
+    // Add these if you installed them
+    // require('@tailwindcss/typography'),
+    // require('@tailwindcss/forms'),
+  ],
 };
+
 export default config;

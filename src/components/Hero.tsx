@@ -15,7 +15,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hi, I am Dan Duany
+          Hi, I&apos;m Dan Duany
         </motion.h1>
 
         <motion.div
@@ -81,7 +81,7 @@ export default function Hero() {
             View My Work
           </Link>
           <a
-            href="/Daniel_Duany_Resume.pdf"
+            href="/Daniel_Duany_Resume_2025.pdf"
             download
             className="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
           >
