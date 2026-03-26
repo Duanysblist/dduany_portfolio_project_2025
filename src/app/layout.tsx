@@ -9,9 +9,44 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Daniel Duany - Software Engineer",
+  metadataBase: new URL("https://dduany-portfolio-project-2025.vercel.app"),
+  title: {
+    default: "Daniel Duany - Software Engineer",
+    template: "%s | Daniel Duany",
+  },
   description:
-    "Full-stack developer specializing in React, Node.js, and cloud technologies.",
+    "Full-stack developer specializing in React, Node.js, and cloud technologies. Explore my projects, blog, and more.",
+  keywords: [
+    "Daniel Duany",
+    "Software Engineer",
+    "Full-Stack Developer",
+    "React",
+    "Next.js",
+    "Node.js",
+    "AWS",
+    "Cloud",
+    "Portfolio",
+  ],
+  authors: [{ name: "Daniel Duany" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://dduany-portfolio-project-2025.vercel.app",
+    siteName: "Daniel Duany",
+    title: "Daniel Duany - Software Engineer",
+    description:
+      "Full-stack developer specializing in React, Node.js, and cloud technologies.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Daniel Duany - Software Engineer",
+    description:
+      "Full-stack developer specializing in React, Node.js, and cloud technologies.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
