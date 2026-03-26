@@ -1,4 +1,15 @@
 import Contact from "@/components/Contact";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with Daniel Duany. Send a message or connect on LinkedIn.",
+  openGraph: {
+    title: "Contact | Daniel Duany",
+    description: "Get in touch with Daniel Duany. Send a message or connect on LinkedIn.",
+  },
+};
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen py-20 px-4">

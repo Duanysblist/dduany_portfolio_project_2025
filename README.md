@@ -64,11 +64,11 @@ Open [http://localhost:3000](http://localhost:3000) to view the site locally.
 - [x] Site scaffolding and deployment
 - [x] Home page with hero and resume download
 - [x] Navigation with Projects, Blog, Contact, Uses, Snippets
-- [ ] Projects page — feature Bionic Apocalypse, NutriPlan AI, and cloud-native portfolio project
-- [ ] Blog — first post on AWS CCP certification journey
-- [ ] Contact form integration
-- [ ] Dark mode toggle
-- [ ] SEO optimization and Open Graph meta tags
+- [x] Projects page — featuring NutriPlan AI, Bionic Apocalypse, Cloud-Native REST API, and Event-Driven Microservices Platform
+- [x] Blog — MDX-powered blog with first post on AWS CCP certification journey
+- [x] Contact form integration (EmailJS)
+- [x] Dark mode toggle (with system preference detection and localStorage persistence)
+- [x] SEO optimization and Open Graph meta tags
 
 ## Author
 

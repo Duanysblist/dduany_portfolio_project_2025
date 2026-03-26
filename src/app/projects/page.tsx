@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
+import ProjectsContent from "./ProjectsContent";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Explore my software engineering projects spanning full-stack development, machine learning, game development, and cloud-native architecture.",
+  openGraph: {
+    title: "Projects | Daniel Duany",
+    description:
+      "Explore my software engineering projects spanning full-stack development, machine learning, game development, and cloud-native architecture.",
+  },
+};
+
 export default function ProjectsPage() {
-  return (
-    <div className="min-h-screen py-20 px-4">
-      <h1 className="text-4xl font-bold text-center">Projects</h1>
-      <p className="text-center mt-4">Coming soon...</p>
-    </div>
-  );
+  return <ProjectsContent />;
 }
