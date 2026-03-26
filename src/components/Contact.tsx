@@ -3,6 +3,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,23 +33,34 @@ export default function Contact() {
       );
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 px-4">
       <div className="max-w-2xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-4xl font-bold text-center mb-12"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
         >
-          Get In Touch
-        </motion.h2>
+          <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+            Have a question or want to work together? Drop me a message and
+            I&apos;ll get back to you as soon as possible.
+          </p>
+        </motion.div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">
               Name
@@ -57,7 +69,8 @@ export default function Contact() {
               type="text"
               id="name"
               required
-              className="w-full px-4 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+              placeholder="Your name"
               value={formData.name}
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
@@ -73,7 +86,8 @@ export default function Contact() {
               type="email"
               id="email"
               required
-              className="w-full px-4 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+              placeholder="your@email.com"
               value={formData.email}
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
@@ -82,14 +96,18 @@ export default function Contact() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium mb-2"
+            >
               Message
             </label>
             <textarea
               id="message"
               rows={5}
               required
-              className="w-full px-4 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none"
+              placeholder="What's on your mind?"
               value={formData.message}
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
@@ -100,22 +118,70 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50"
+            className="w-full py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50 font-medium"
           >
             {status === "sending" ? "Sending..." : "Send Message"}
           </button>
 
           {status === "success" && (
-            <p className="text-green-600 text-center">
-              Message sent successfully!
-            </p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-green-600 dark:text-green-400 text-center font-medium"
+            >
+              Message sent successfully! I&apos;ll get back to you soon.
+            </motion.p>
           )}
           {status === "error" && (
-            <p className="text-red-600 text-center">
-              Failed to send message. Please try again.
-            </p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-red-600 dark:text-red-400 text-center"
+            >
+              Failed to send message. Please try again or reach out directly via
+              email.
+            </motion.p>
           )}
-        </form>
+        </motion.form>
+
+        {/* Alternative contact methods */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 text-center"
+        >
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Or reach out directly
+          </p>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://github.com/Duanysblist"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} />
+            </a>
+            <a
+              href="https://linkedin.com/in/danielduany"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a
+              href="mailto:dduany919@gmail.com"
+              className="text-gray-600 dark:text-gray-400 hover:text-red-500 transition-colors"
+              aria-label="Email"
+            >
+              <FaEnvelope size={24} />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

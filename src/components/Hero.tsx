@@ -72,21 +72,20 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-4"
         >
           <Link
             href="/projects"
-            className="px-8 py3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+            className="px-8 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
           >
             View My Work
           </Link>
-          <a
-            href="/Daniel_Duany_Resume_2025.pdf"
-            download
-            className="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+          <Link
+            href="/contact"
+            className="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors font-medium"
           >
-            Download Resume
-          </a>
+            Get in Touch
+          </Link>
         </motion.div>
       </div>
     </section>
