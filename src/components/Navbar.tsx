@@ -106,8 +106,8 @@ export default function Navbar() {
 
               {/* Desktop Resume Button */}
               <motion.a
-                href="/resume.pdf"
-                download="Daniel_Duany_Resume_2025.pdf"
+                href="/Daniel_Duany_Resume_2025.pdf"
+                download="Daniel_Duany_Resume.pdf"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -266,7 +266,7 @@ export default function Navbar() {
                     className="pt-4"
                   >
                     <a
-                      href="/resume.pdf"
+                      href="/Daniel_Duany_Resume_2025.pdf"
                       download="Daniel_Duany_Resume.pdf"
                       className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                     >
@@ -280,7 +280,7 @@ export default function Navbar() {
                 <div className="p-4 border-t dark:border-gray-800">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      © 2024 Daniel Duany
+                      © {new Date().getFullYear()} Daniel Duany
                     </span>
                     <div className="flex gap-2">
                       {/* Add social icons here if needed */}
