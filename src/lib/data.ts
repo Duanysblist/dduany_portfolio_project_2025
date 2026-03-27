@@ -37,6 +37,7 @@ export const projects: Project[] = [
     techStack: ["C++", "SDL2", "CMake", "SDL2_image", "SDL2_ttf", "SDL2_mixer"],
     status: "Complete",
     githubUrl: "https://github.com/Duanysblist/BAVideoGame",
+    liveUrl: "https://duanysblist.github.io/bionic-apocalypse-demo/",
   },
   {
     title: "Cloud-Native REST API",
